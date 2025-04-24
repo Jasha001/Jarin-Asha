@@ -1,0 +1,7 @@
+-- postgresql-output.txt
+ id |  name
+----+--------
+  1 | George
+  2 | Jerry
+  3 | Larry
+(3 rows)

@@ -1,0 +1,2 @@
+// mongodb-output.txt
+{ "_id" : ObjectId("5f1d7c2f8f1b2a3c4e1a9f02"), "name" : "Test Name", "value" : "Test Value" }

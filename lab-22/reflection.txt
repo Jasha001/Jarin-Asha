@@ -1,0 +1,43 @@
+Lab 22: Reflection – Implementing Attacks
+
+1. SQL Injection Exploit Explanation:
+The injection ' OR '1'='1 works because the SQL command becomes:
+SELECT * FROM users WHERE username = 'admin' AND password = '' OR '1'='1';
+This condition always returns true because '1'='1' is a valid boolean expression.
+As a result, the database returns a user record even without a valid password.
+
+2. SQL Injection Fix:
+By using parameterized queries, we prevent SQL from being altered via input:
+const query = 'SELECT * FROM users WHERE username = ? AND password = ?';
+db.execute(query, [username, password], ...);
+This ensures user input is treated as data, not executable SQL code.
+
+3. XSS Exploit Explanation:
+The input <script>alert('XSS!');</script> runs JavaScript in the browser if rendered directly.
+This is dangerous because attackers could steal cookies, redirect users, or inject malicious content.
+
+4. XSS Fix:
+Sanitize input before displaying it:
+const safeComment = comment.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+This stops script tags from being interpreted by the browser.
+
+5. Session Hijacking Exploit:
+If a session cookie isn't secured, an attacker could copy it and impersonate the user in another browser session.
+
+6. Session Security Fix:
+Secure session setup:
+app.use(session({
+    secret: 'supersecretkey',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true, httpOnly: true }
+}));
+This ensures cookies are only sent over HTTPS and not accessible via JavaScript.
+
+7. Circumventing Defenses:
+Attackers may use:
+- URL encoding to bypass simple sanitization
+- Session fixation attacks to exploit weak session handling
+- SQL comments or concatenation to evade weak input validation
+
+Proper defense requires layered security: input sanitization, token validation, and cookie flags.

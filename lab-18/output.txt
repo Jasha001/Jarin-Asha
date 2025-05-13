@@ -1,0 +1,31 @@
+=== hashing.js ===
+Input: Hello, World!
+Command: node hashing.js "Hello, World!"
+Output: SHA-256 Hash: a591a6d40bf420404a011733cfb7b190d62c65bf0bcda32b57b277d9ad9f146e
+
+Input: Hello, World!!
+Command: node hashing.js "Hello, World!!"
+Output: SHA-256 Hash: 8710339b0db434db3fd8012fd4fa23e26d1ea19e0617f253bd808fef0c9b1c56
+
+=== encoding.js ===
+Input: Hello, Base64!
+Command: node encoding.js "Hello, Base64!"
+Output:
+Encoded: SGVsbG8sIEJhc2U2NCE=
+Decoded: Hello, Base64!
+
+=== encryption.js ===
+Input: Sensitive Data
+Command: node encryption.js "Sensitive Data"
+Output:
+Encrypted: U2FsdGVkX1+lskkDZJUpVhFLqtKeWTOs41Ej0brBBEw=
+Decrypted: Sensitive Data
+
+=== combined.js ===
+Input: myPassword123
+Command: node combined.js "myPassword123"
+Output:
+Hashed: f5d1278e8109edd94e1e4197e04873b9cdc98e2cfb4b6e6f3b09dba2f6b9fbc4
+Base64 Encoded: ZjVkMTI3OGU4MTA5ZWRkOTRlMWU0MTk3ZTA0ODczYjljZGM5OGUyY2ZiNGI2ZTZmM2IwOWRiYTJmNmI5ZmJjNA==
+Encrypted: U2FsdGVkX1/WdWWbfXT/Fb7Eyn4SvHWlYcWY6vKlA8mhOhg+n9FvX+nljtQ1Y5dt
+Decrypted and Decoded: f5d1278e8109edd94e1e4197e04873b9cdc98e2cfb4b6e6f3b09dba2f6b9fbc4

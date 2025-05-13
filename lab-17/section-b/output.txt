@@ -1,0 +1,49 @@
+SECTION B: MongoDB - cities
+
+1. POST /cities
+Input:
+{
+  "name": "New York",
+  "mayor": "Eric Adams",
+  "population": 8500000
+}
+Output:
+{
+  "_id": "abc123...",
+  "name": "New York",
+  "mayor": "Eric Adams",
+  "population": 8500000,
+  "__v": 0
+}
+
+2. GET /cities
+Output:
+[
+  {
+    "_id": "abc123...",
+    "name": "New York",
+    "mayor": "Eric Adams",
+    "population": 8500000,
+    "__v": 0
+  }
+]
+
+3. PUT /cities/abc123...
+Input:
+{
+  "name": "New York City",
+  "mayor": "Eric Adams",
+  "population": 8600000
+}
+Output:
+{
+  "_id": "abc123...",
+  "name": "New York City",
+  "mayor": "Eric Adams",
+  "population": 8600000,
+  "__v": 0
+}
+
+4. DELETE /cities/abc123...
+Output:
+City with id abc123... deleted

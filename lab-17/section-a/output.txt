@@ -1,0 +1,46 @@
+SECTION A: PostgreSQL - patients
+
+1. POST /patients
+Input:
+{
+  "name": "John Doe",
+  "age": 40,
+  "condition": "Flu"
+}
+Output:
+{
+  "id": 1,
+  "name": "John Doe",
+  "age": 40,
+  "condition": "Flu"
+}
+
+2. GET /patients
+Output:
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "age": 40,
+    "condition": "Flu"
+  }
+]
+
+3. PUT /patients/1
+Input:
+{
+  "name": "John Smith",
+  "age": 41,
+  "condition": "Cold"
+}
+Output:
+{
+  "id": 1,
+  "name": "John Smith",
+  "age": 41,
+  "condition": "Cold"
+}
+
+4. DELETE /patients/1
+Output:
+Patient with id 1 deleted
